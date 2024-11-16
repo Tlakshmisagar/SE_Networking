@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.28.3" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Network\Network.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Protobuf Include="C:\Users\sagar\OneDrive\Desktop\Sem 7\Software Engineering\vs codes\main module\Network\Protos\server.proto" GrpcServices ="Both"/>
+	</ItemGroup>
+	
+</Project>

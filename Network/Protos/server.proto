@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+package Server;
+
+service Server{
+	rpc connect (connectRequest) returns (connectResponse); // server that helps in storing the ip and port of the client in a map
+	rpc serverReceive (sendRequest) returns (sendResponse); // this server is called when send function is called on the client side 
+    rpc disconnect (disconnectRequest) returns (disconnectResponse); // this server is called when the client disconnects
+	rpc updateCounter (updateCounterRequest) returns (updateCounterResponse);
+	rpc updateCounter2 (updateCounterRequest) returns (updateCounterResponse);
+}
+
+message disconnectRequest{
+	string clientId = 1;
+}
+
+message disconnectResponse{
+
+}
+
+message updateCounterRequest{
+	
+}
+
+message updateCounterResponse{
+	int32 counter = 1;
+}
+
+message connectRequest{
+	string ip = 1;
+	string port = 2;
+}
+
+message connectResponse{
+	bool connectionSuccess = 1;
+}
+
+message sendRequest{
+	string serializedData = 1;
+	string destination = 2;
+	string moduleName = 3;
+}
+
+message sendResponse{
+
+}

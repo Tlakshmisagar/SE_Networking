@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcClient";
+
+package Client;
+
+service Client{
+	rpc receive (request) returns (response);
+    rpc setclientid (setClientIdRequest) returns (setClientIdResponse);
+}
+
+message request{
+	string serializedData = 1;
+	string destination = 2;
+	string moduleName = 3;
+}
+
+message setClientIdRequest{
+    string clientId = 1;
+}
+
+message setClientIdResponse{
+    
+}
+
+message response{
+
+}
